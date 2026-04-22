@@ -1,0 +1,4 @@
+source;share/toe_arm2/local_setup.bash
+source;share/toe_arm2/local_setup.dsv
+source;share/toe_arm2/local_setup.sh
+source;share/toe_arm2/local_setup.zsh

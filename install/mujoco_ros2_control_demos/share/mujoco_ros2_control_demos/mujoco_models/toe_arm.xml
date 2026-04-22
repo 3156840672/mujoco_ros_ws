@@ -1,0 +1,60 @@
+<mujoco model="arm">
+    <compiler angle="radian" meshdir="../meshes/" />
+    <size njmax="500" nconmax="100" />
+    <asset>
+        <mesh name="base_link" file="base_link.STL" />
+        <mesh name="Link1" file="Link1.STL" />
+        <mesh name="Link2" file="Link2.STL" />
+        <mesh name="Link3" file="Link3.STL" />
+        <mesh name="Link4" file="Link4.STL" />
+        <mesh name="Link5" file="Link5.STL" />
+        <mesh name="Link6" file="Link6.STL" />
+    </asset>
+    <worldbody>
+
+        <light pos="0 0 3" dir="0 0 -1" diffuse="1 1 1"/>
+
+        <!-- ⭐ camera（必须加，否则看不到） -->
+        <camera name="fixed" pos="0.3 -0.1 0.3" xyaxes="1 0 0 0 0.7 0.7"/>
+        <geom type="plane" size="5 5 0.1" rgba="0.9 0.9 0.9 1"/>
+        <geom quat="0.707105 0.707108 0 0" type="mesh" rgba="0.498039 0.498039 0.498039 1" mesh="base_link" />
+        <body name="Link1" pos="0 -1.95782e-07 0.0533" quat="0.19509 3.58303e-07 1.80131e-06 -0.980785">
+            <inertial pos="0.00473179 0.0114712 0.0394198" quat="0.71178 0.287545 -0.427518 0.477405" mass="0.317411" diaginertia="0.000338019 0.000246189 0.00022223" />
+            <joint name="joint1" pos="0 0 0" axis="0 0 1" limited="true" range="-3.14 3.14" />
+            <geom type="mesh" rgba="0.498039 0.498039 0.498039 1" mesh="Link1" />
+            <body name="Link2" pos="-0.0114805 -0.0277164 0.058" quat="0.69352 0.69352 -0.13795 -0.13795">
+                <inertial pos="0.126819 -0.000518577 -0.0244062" quat="0.000398944 0.74026 0.000451244 0.672321" mass="0.723265" diaginertia="0.000731868 0.00068889 0.000379275" />
+                <joint name="joint2" pos="0 0 0" axis="0 0 1" limited="true" range="-3.14 3.14" />
+                <geom type="mesh" rgba="0.498039 0.498039 0.498039 1" mesh="Link2" />
+                <body name="Link3" pos="0.22 0 -0.06" quat="0 0 -1 0">
+                    <inertial pos="0.111478 0.0479488 -0.032043" quat="0.213486 0.579447 0.510514 0.598365" mass="0.413607" diaginertia="0.000788995 0.000711681 0.000375901" />
+                    <joint name="joint3" pos="0 0 0" axis="0 0 1" limited="true" range="-3.14 3.14" />
+                    <geom type="mesh" rgba="0.498039 0.498039 0.498039 1" mesh="Link3" />
+                    <body name="Link4" pos="0.253873 0.065962 -0.0299975" quat="0.706945 0.0151231 0.706945 -0.0151231">
+                        <inertial pos="0.000619115 9.88506e-05 0.0267641" quat="0.696528 0.709462 0.0759826 -0.0757542" mass="0.069642" diaginertia="5.97663e-05 4.96666e-05 3.62226e-05" />
+                        <joint name="joint4" pos="0 0 0" axis="0 0 -1" limited="true" range="-3.14 3.14" />
+                        <geom type="mesh" rgba="0.498039 0.498039 0.498039 1" mesh="Link4" />
+                        <body name="Link5" pos="-0.0222975 1.40241e-05 0.0405025" quat="0.0151231 -0.706945 -0.0151231 0.706945">
+                            <inertial pos="-0.0466754 0.0228559 -0.0133667" quat="0.197954 0.427225 -0.101101 0.876397" mass="0.0960243" diaginertia="0.000118766 0.000107265 7.03221e-05" />
+                            <joint name="joint5" pos="0 0 0" axis="0 0 -1" limited="true" range="-3.14 3.14" />
+                            <geom type="mesh" rgba="0.498039 0.498039 0.498039 1" mesh="Link5" />
+                            <body name="Link6" pos="-0.082519 0.040793 -0.022303" quat="0.152649 -0.653284 0.168733 0.722113">
+                                <inertial pos="-0.0010959 0.00062416 0.021018" quat="0.182871 0.682546 -0.18258 0.683633" mass="0.050337" diaginertia="2.0725e-05 1.2445e-05 1.2116e-05" />
+                                <joint name="joint6" pos="0 0 0" axis="0 0 1" limited="true" range="-3.14 3.14" />
+                                <geom type="mesh" rgba="0.37255 0.37255 0.37255 1" mesh="Link6" />
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+    <actuator>
+        <position joint="joint1" kp="200" kv="30"/>
+        <position joint="joint2" kp="200" kv="30"/>
+        <position joint="joint3" kp="200" kv="30"/>
+        <position joint="joint4" kp="200" kv="30"/>
+        <position joint="joint5" kp="200" kv="30"/>
+        <position joint="joint6" kp="200" kv="30"/>
+    </actuator>
+</mujoco>

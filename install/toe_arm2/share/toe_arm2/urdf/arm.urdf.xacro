@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="arm">
+
+    <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
+
+    <!-- ✅ ROS2 正确写法 -->
+   <xacro:include filename="$(find toe_arm2)/urdf/arm0.urdf" />
+
+    <!-- ========================= -->
+    <!-- ❌ 重要：删除 transmissions -->
+    <!-- ros2_control + Gazebo 不需要 transmission（反而容易冲突） -->
+    <!-- ========================= -->
+
+
+    <!-- ✅ ros2_control -->
+    <ros2_control name="GazeboSystem" type="system">
+
+        <hardware>
+            <plugin>gazebo_ros2_control</plugin>
+        </hardware>
+
+        <joint name="joint1">
+            <command_interface name="position"/>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+        </joint>
+
+        <joint name="joint2">
+            <command_interface name="position"/>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+        </joint>
+
+        <joint name="joint3">
+            <command_interface name="position"/>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+        </joint>
+
+        <joint name="joint4">
+            <command_interface name="position"/>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+        </joint>
+
+        <joint name="joint5">
+            <command_interface name="position"/>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+        </joint>
+
+        <joint name="joint6">
+            <command_interface name="position"/>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+        </joint>
+
+    </ros2_control>
+
+
+    <!-- ✅ Gazebo 插件 -->
+    <gazebo>
+        <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+            <parameters>$(find toe_arm2)/config/ros2_controllers.yaml</parameters>
+        </plugin>
+    </gazebo>
+
+</robot>

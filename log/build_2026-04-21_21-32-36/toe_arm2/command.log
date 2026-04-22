@@ -1,0 +1,6 @@
+Invoking command in '/home/yue/mujoco_ros_ws/build/toe_arm2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/yue/mujoco_ros_ws/src/toe_arm2 -DCMAKE_INSTALL_PREFIX=/home/yue/mujoco_ros_ws/install/toe_arm2
+Invoked command in '/home/yue/mujoco_ros_ws/build/toe_arm2' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/yue/mujoco_ros_ws/src/toe_arm2 -DCMAKE_INSTALL_PREFIX=/home/yue/mujoco_ros_ws/install/toe_arm2
+Invoking command in '/home/yue/mujoco_ros_ws/build/toe_arm2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/yue/mujoco_ros_ws/build/toe_arm2 -- -j20 -l20
+Invoked command in '/home/yue/mujoco_ros_ws/build/toe_arm2' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/yue/mujoco_ros_ws/build/toe_arm2 -- -j20 -l20
+Invoking command in '/home/yue/mujoco_ros_ws/build/toe_arm2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/yue/mujoco_ros_ws/build/toe_arm2
+Invoked command in '/home/yue/mujoco_ros_ws/build/toe_arm2' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/yue/mujoco_ros_ws/build/toe_arm2

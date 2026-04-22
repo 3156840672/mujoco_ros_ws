@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="arm">
+
+  <!-- ✅ 只新增这一段 -->
+  <link name="world"/>
+
+  <joint name="world_to_base" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+  </joint>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.012515928355688 0.0151399804836392 -9.73830544897645E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.352135013909027" />
+      <inertia
+        ixx="0.000294487929301511"
+        ixy="2.35840902656288E-07"
+        ixz="-4.92017078032979E-08"
+        iyy="0.000783017956989992"
+        iyz="-1.33988589155034E-07"
+        izz="0.000583669405483807" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://toe_arm2/urdf/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.498039215686275 0.498039215686275 0.498039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://toe_arm2/urdf/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Link1">
+    <inertial>
+      <origin
+        xyz="0.00473179453167778 0.0114711900240887 0.0394198319242665"
+        rpy="0 0 0" />
+      <mass
+        value="0.317410568479799" />
+      <inertia
+        ixx="0.000246445339846967"
+        ixy="5.72023351831953E-07"
+        ixz="1.82407378196782E-05"
+        iyy="0.000247452977120289"
+        iyz="4.43654490342237E-05"
+        izz="0.000312539902538369" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://toe_arm2/urdf/meshes/Link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.498039215686275 0.498039215686275 0.498039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://toe_arm2/urdf/meshes/Link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="revolute">
+    <origin
+      xyz="0 0.0533 0"
+      rpy="1.5707963267949 -0.392699081698732 -3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="Link1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="8"
+      velocity="4"/>
+  </joint>
+  <link
+    name="Link2">
+    <inertial>
+      <origin
+        xyz="0.12681874159338 -0.00051857731537519 -0.0244061729786456"
+        rpy="0 0 0" />
+      <mass
+        value="0.72326532511612" />
+      <inertia
+        ixx="0.000382522344389937"
+        ixy="1.31463056491792E-12"
+        ixz="3.36819667465266E-05"
+        iyy="0.000688890406140518"
+        iyz="5.20066943095555E-08"
+        izz="0.000728620253870715" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://toe_arm2/urdf/meshes/Link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.498039215686275 0.498039215686275 0.498039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://toe_arm2/urdf/meshes/Link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="revolute">
+    <origin
+      xyz="-0.0114805029709558 -0.0277163859753353 0.0580000000000023"
+      rpy="1.5707963267949 0 -0.392699081698731" />
+    <parent
+      link="Link1" />
+    <child
+      link="Link2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="8"
+      velocity="4"/>
+  </joint>
+  <link
+    name="Link3">
+    <inertial>
+      <origin
+        xyz="0.111478378889637 0.047948846556832 -0.0320429537549274"
+        rpy="0 0 0" />
+      <mass
+        value="0.413607018346585" />
+      <inertia
+        ixx="0.000437109928752837"
+        ixy="-0.00012679936897706"
+        ixz="5.02693462772961E-05"
+        iyy="0.000722785303080014"
+        iyz="5.46712398515658E-05"
+        izz="0.000716681683198604" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://toe_arm2/urdf/meshes/Link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.498039215686275 0.498039215686275 0.498039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://toe_arm2/urdf/meshes/Link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint3"
+    type="revolute">
+    <origin
+      xyz="0.22 0 -0.06"
+      rpy="3.14159265358979 0 -3.14159265358979" />
+    <parent
+      link="Link2" />
+    <child
+      link="Link3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="8"
+      velocity="4"/>
+  </joint>
+  <link
+    name="Link4">
+    <inertial>
+      <origin
+        xyz="0.00061911466386951 9.88506037433168E-05 0.0267640562555617"
+        rpy="0 0 0" />
+      <mass
+        value="0.069641986321908" />
+      <inertia
+        ixx="5.93065430782383E-05"
+        ixy="4.71249797269267E-10"
+        ixz="-2.10544698500917E-06"
+        iyy="3.62271041465156E-05"
+        iyz="-2.49811868015379E-07"
+        izz="5.01217649093185E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://toe_arm2/urdf/meshes/Link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.498039215686275 0.498039215686275 0.498039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://toe_arm2/urdf/meshes/Link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint4"
+    type="revolute">
+    <origin
+      xyz="0.253873001298476 0.0659619794246408 -0.0299974827332931"
+      rpy="0.0427777303481176 1.5707963267949 0" />
+    <parent
+      link="Link3" />
+    <child
+      link="Link4" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="8"
+      velocity="4"/>
+  </joint>
+  <link
+    name="Link5">
+    <inertial>
+      <origin
+        xyz="-0.046675372608873 0.0228559237526806 -0.0133667026659401"
+        rpy="0 0 0" />
+      <mass
+        value="0.096024309122297" />
+      <inertia
+        ixx="9.22671983385421E-05"
+        ixy="7.4011073142097E-06"
+        ixz="-2.11412124824369E-05"
+        iyy="0.000103614008041901"
+        iyz="1.02270903615714E-05"
+        izz="0.000100471536544141" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://toe_arm2/urdf/meshes/Link5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.498039215686275 0.498039215686275 0.498039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://toe_arm2/urdf/meshes/Link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint5"
+    type="revolute">
+    <origin
+      xyz="-0.0222974827332975 1.40240690464366E-05 0.0405025172667064"
+      rpy="-1.57079632679491 1.52801859644679 1.57079632679489" />
+    <parent
+      link="Link4" />
+    <child
+      link="Link5" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="8"
+      velocity="4"/>
+  </joint>
+  <link
+    name="Link6">
+    <inertial>
+      <origin
+        xyz="-0.0010959 0.00062416 0.021018"
+        rpy="0 0 0" />
+      <mass
+        value="0.050337" />
+      <inertia
+        ixx="1.2198E-05"
+        ixy="1.4234E-07"
+        ixz="-1.1874E-08"
+        iyy="1.2363E-05"
+        iyz="6.8537E-09"
+        izz="2.0725E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://toe_arm2/urdf/meshes/Link6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.37255 0.37255 0.37255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://toe_arm2/urdf/meshes/Link6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint6"
+    type="revolute">
+    <origin
+      xyz="-0.082519 0.040793 -0.022303"
+      rpy="-2.6825 1.6708 0" />
+    <parent
+      link="Link5" />
+    <child
+      link="Link6" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="8"
+      velocity="4"/>
+  </joint>
+  <ros2_control name="MujocoSystem" type="system">
+    <hardware>
+      <plugin>mujoco_ros2_control/MujocoSystem</plugin>
+    </hardware>
+    
+    <!-- 关节1配置 -->
+    <joint name="joint1">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    
+    <!-- 关节2配置 -->
+    <joint name="joint2">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    
+    <!-- 关节3配置 -->
+    <joint name="joint3">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    
+    <!-- 关节4配置 -->
+    <joint name="joint4">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    
+    <!-- 关节5配置 -->
+    <joint name="joint5">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    
+    <!-- 关节6配置 -->
+    <joint name="joint6">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    
+  </ros2_control>
+</robot>

@@ -1,0 +1,158 @@
+[0.006s] Invoking command in '/home/yue/mujoco_ros_ws/build/mujoco_ros2_control_demos': AMENT_PREFIX_PATH=/home/yue/mujoco_ros_ws/install/mujoco_ros2_control:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/yue/mujoco_ros_ws/install/mujoco_ros2_control:/opt/ros/humble LD_LIBRARY_PATH=/home/yue/mujoco_ros_ws/install/mujoco_ros2_control/lib:${LD_LIBRARY_PATH} /usr/bin/cmake /home/yue/mujoco_ros_ws/src/mujoco_ros2_control/mujoco_ros2_control_demos -DCMAKE_INSTALL_PREFIX=/home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos
+[0.062s] -- The C compiler identification is GNU 11.4.0
+[0.102s] -- The CXX compiler identification is GNU 11.4.0
+[0.106s] -- Detecting C compiler ABI info
+[0.169s] -- Detecting C compiler ABI info - done
+[0.177s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.177s] -- Detecting C compile features
+[0.178s] -- Detecting C compile features - done
+[0.180s] -- Detecting CXX compiler ABI info
+[0.238s] -- Detecting CXX compiler ABI info - done
+[0.244s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.244s] -- Detecting CXX compile features
+[0.245s] -- Detecting CXX compile features - done
+[0.246s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.349s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.402s] -- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)
+[0.429s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.431s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.436s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.442s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.451s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.474s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.475s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.538s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.559s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.587s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.593s] -- Looking for pthread.h
+[0.662s] -- Looking for pthread.h - found
+[0.663s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.731s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.732s] -- Found Threads: TRUE  
+[0.764s] -- Found rclcpp_action: 16.0.19 (/opt/ros/humble/share/rclcpp_action/cmake)
+[0.783s] -- Found control_msgs: 4.8.0 (/opt/ros/humble/share/control_msgs/cmake)
+[0.862s] -- Configuring done
+[0.879s] -- Generating done
+[0.886s] -- Build files have been written to: /home/yue/mujoco_ros_ws/build/mujoco_ros2_control_demos
+[0.893s] Invoked command in '/home/yue/mujoco_ros_ws/build/mujoco_ros2_control_demos' returned '0': AMENT_PREFIX_PATH=/home/yue/mujoco_ros_ws/install/mujoco_ros2_control:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/yue/mujoco_ros_ws/install/mujoco_ros2_control:/opt/ros/humble LD_LIBRARY_PATH=/home/yue/mujoco_ros_ws/install/mujoco_ros2_control/lib:${LD_LIBRARY_PATH} /usr/bin/cmake /home/yue/mujoco_ros_ws/src/mujoco_ros2_control/mujoco_ros2_control_demos -DCMAKE_INSTALL_PREFIX=/home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos
+[0.894s] Invoking command in '/home/yue/mujoco_ros_ws/build/mujoco_ros2_control_demos': AMENT_PREFIX_PATH=/home/yue/mujoco_ros_ws/install/mujoco_ros2_control:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/yue/mujoco_ros_ws/install/mujoco_ros2_control:/opt/ros/humble LD_LIBRARY_PATH=/home/yue/mujoco_ros_ws/install/mujoco_ros2_control/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/yue/mujoco_ros_ws/build/mujoco_ros2_control_demos -- -j20 -l20
+[0.933s] [ 14%] [32mBuilding CXX object CMakeFiles/example_camera.dir/examples/example_camera.cpp.o[0m
+[0.934s] [ 14%] [32mBuilding CXX object CMakeFiles/example_gripper.dir/examples/example_gripper.cpp.o[0m
+[0.935s] [ 21%] [32mBuilding CXX object CMakeFiles/example_effort.dir/examples/example_effort.cpp.o[0m
+[0.936s] [ 28%] [32mBuilding CXX object CMakeFiles/example_diff_drive.dir/examples/example_diff_drive.cpp.o[0m
+[0.936s] [ 35%] [32mBuilding CXX object CMakeFiles/example_position.dir/examples/example_position.cpp.o[0m
+[0.937s] [ 42%] [32mBuilding CXX object CMakeFiles/example_tricycle_drive.dir/examples/example_tricycle_drive.cpp.o[0m
+[0.937s] [ 50%] [32mBuilding CXX object CMakeFiles/example_velocity.dir/examples/example_velocity.cpp.o[0m
+[3.633s] [ 57%] [32m[1mLinking CXX executable example_diff_drive[0m
+[3.647s] [ 64%] [32m[1mLinking CXX executable example_effort[0m
+[3.703s] [ 78%] [32m[1mLinking CXX executable example_gripper[0m
+[3.704s] [ 78%] [32m[1mLinking CXX executable example_velocity[0m
+[3.780s] [ 78%] Built target example_diff_drive
+[3.831s] [ 78%] Built target example_effort
+[3.854s] [ 78%] Built target example_velocity
+[3.854s] [ 78%] Built target example_gripper
+[3.946s] [ 85%] [32m[1mLinking CXX executable example_tricycle_drive[0m
+[4.074s] [ 85%] Built target example_tricycle_drive
+[4.130s] [ 92%] [32m[1mLinking CXX executable example_position[0m
+[4.185s] [100%] [32m[1mLinking CXX executable example_camera[0m
+[4.253s] [100%] Built target example_position
+[4.308s] [100%] Built target example_camera
+[4.315s] Invoked command in '/home/yue/mujoco_ros_ws/build/mujoco_ros2_control_demos' returned '0': AMENT_PREFIX_PATH=/home/yue/mujoco_ros_ws/install/mujoco_ros2_control:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/yue/mujoco_ros_ws/install/mujoco_ros2_control:/opt/ros/humble LD_LIBRARY_PATH=/home/yue/mujoco_ros_ws/install/mujoco_ros2_control/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --build /home/yue/mujoco_ros_ws/build/mujoco_ros2_control_demos -- -j20 -l20
+[4.316s] Invoking command in '/home/yue/mujoco_ros_ws/build/mujoco_ros2_control_demos': AMENT_PREFIX_PATH=/home/yue/mujoco_ros_ws/install/mujoco_ros2_control:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/yue/mujoco_ros_ws/install/mujoco_ros2_control:/opt/ros/humble LD_LIBRARY_PATH=/home/yue/mujoco_ros_ws/install/mujoco_ros2_control/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --install /home/yue/mujoco_ros_ws/build/mujoco_ros2_control_demos
+[4.322s] -- Install configuration: ""
+[4.322s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//launch
+[4.323s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//launch/tricycle_drive.launch.py
+[4.323s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//launch/cart_example_velocity.launch.py
+[4.323s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//launch/vertical_cart_example_position_pid.launch.py
+[4.323s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//launch/gripper_mimic_joint_example.launch.py
+[4.323s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//launch/camera_demo.rviz
+[4.323s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//launch/ft_sensor_example.launch.py
+[4.323s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//launch/cart_example_effort.launch.py
+[4.323s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//launch/diff_drive.launch.py
+[4.323s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//launch/toe_arm_launch.py
+[4.323s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//launch/vertical_cart_example_velocity.launch.py
+[4.323s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//launch/camera_example.launch.py
+[4.324s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//launch/cart_example_position.launch.py
+[4.324s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//config
+[4.324s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//config/cartpole_controller_effort.yaml
+[4.324s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//config/cartpole_controller_velocity.yaml
+[4.324s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//config/tricycle_drive_controller.yaml
+[4.324s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//config/cartpole_controller_position.yaml
+[4.324s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//config/gripper_controller.yaml
+[4.324s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//config/camera_controller_position.yaml
+[4.324s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//config/toe_arm.yaml
+[4.324s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//config/ft_broadcaster.yaml
+[4.325s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//config/diff_drive_controller.yaml
+[4.325s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//urdf
+[4.325s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//urdf/arm0.urdf
+[4.325s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//urdf/test_vertical_cart_velocity_pid.xacro.urdf
+[4.325s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//urdf/test_camera.xacro.urdf
+[4.325s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//urdf/test_cart_velocity.xacro.urdf
+[4.326s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//urdf/test_ft_sensor.xacro.urdf
+[4.326s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//urdf/test_tricycle_drive.xacro.urdf
+[4.326s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//urdf/test_cart_position.xacro.urdf
+[4.326s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//urdf/test_gripper_mimic_joint.xacro.urdf
+[4.326s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//urdf/test_vertical_cart_position_pid.xacro.urdf
+[4.326s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//urdf/meshes
+[4.326s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//urdf/meshes/Link4.STL
+[4.328s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//urdf/meshes/Link3.STL
+[4.331s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//urdf/meshes/Link5.STL
+[4.333s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//urdf/meshes/Link2.STL
+[4.343s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//urdf/meshes/Link6.STL
+[4.344s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//urdf/meshes/base_link.STL
+[4.349s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//urdf/meshes/Link1.STL
+[4.351s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//urdf/test_diff_drive.xacro.urdf
+[4.351s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//urdf/test_cart_effort.xacro.urdf
+[4.351s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//scripts
+[4.351s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//scripts/manual_control.py
+[4.351s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//scripts/test_arm.py
+[4.351s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//meshes
+[4.352s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//meshes/Link4.STL
+[4.353s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//meshes/Link3.STL
+[4.356s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//meshes/Link5.STL
+[4.358s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//meshes/Link2.STL
+[4.367s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//meshes/Link6.STL
+[4.368s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//meshes/base_link.STL
+[4.373s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//meshes/Link1.STL
+[4.374s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//mujoco_models
+[4.374s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//mujoco_models/test_gripper_mimic_joint.xml
+[4.374s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//mujoco_models/test_ft_sensor.xml
+[4.374s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//mujoco_models/test_diff_drive.xml
+[4.374s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//mujoco_models/test_camera.xml
+[4.375s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//mujoco_models/test_vertical_cart.xml
+[4.375s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//mujoco_models/toe_arm.xml
+[4.375s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//mujoco_models/test_cart.xml
+[4.375s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos//mujoco_models/test_tricycle_drive.xml
+[4.375s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/lib/mujoco_ros2_control_demos/test_arm.py
+[4.375s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/lib/mujoco_ros2_control_demos/manual_control.py
+[4.375s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/lib/mujoco_ros2_control_demos/toe_arm_launch.py
+[4.375s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/lib/mujoco_ros2_control_demos/example_position
+[4.375s] -- Set runtime path of "/home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/lib/mujoco_ros2_control_demos/example_position" to ""
+[4.376s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/lib/mujoco_ros2_control_demos/example_velocity
+[4.376s] -- Set runtime path of "/home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/lib/mujoco_ros2_control_demos/example_velocity" to ""
+[4.376s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/lib/mujoco_ros2_control_demos/example_effort
+[4.377s] -- Set runtime path of "/home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/lib/mujoco_ros2_control_demos/example_effort" to ""
+[4.377s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/lib/mujoco_ros2_control_demos/example_diff_drive
+[4.377s] -- Set runtime path of "/home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/lib/mujoco_ros2_control_demos/example_diff_drive" to ""
+[4.377s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/lib/mujoco_ros2_control_demos/example_tricycle_drive
+[4.378s] -- Set runtime path of "/home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/lib/mujoco_ros2_control_demos/example_tricycle_drive" to ""
+[4.378s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/lib/mujoco_ros2_control_demos/example_gripper
+[4.378s] -- Set runtime path of "/home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/lib/mujoco_ros2_control_demos/example_gripper" to ""
+[4.378s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/lib/mujoco_ros2_control_demos/example_camera
+[4.379s] -- Set runtime path of "/home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/lib/mujoco_ros2_control_demos/example_camera" to ""
+[4.379s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/ament_index/resource_index/package_run_dependencies/mujoco_ros2_control_demos
+[4.379s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/ament_index/resource_index/parent_prefix_path/mujoco_ros2_control_demos
+[4.379s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos/environment/ament_prefix_path.sh
+[4.379s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos/environment/ament_prefix_path.dsv
+[4.379s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos/environment/path.sh
+[4.379s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos/environment/path.dsv
+[4.379s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos/local_setup.bash
+[4.379s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos/local_setup.sh
+[4.379s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos/local_setup.zsh
+[4.379s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos/local_setup.dsv
+[4.379s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos/package.dsv
+[4.379s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/ament_index/resource_index/packages/mujoco_ros2_control_demos
+[4.379s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos/cmake/mujoco_ros2_control_demosConfig.cmake
+[4.380s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos/cmake/mujoco_ros2_control_demosConfig-version.cmake
+[4.380s] -- Installing: /home/yue/mujoco_ros_ws/install/mujoco_ros2_control_demos/share/mujoco_ros2_control_demos/package.xml
+[4.381s] Invoked command in '/home/yue/mujoco_ros_ws/build/mujoco_ros2_control_demos' returned '0': AMENT_PREFIX_PATH=/home/yue/mujoco_ros_ws/install/mujoco_ros2_control:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/yue/mujoco_ros_ws/install/mujoco_ros2_control:/opt/ros/humble LD_LIBRARY_PATH=/home/yue/mujoco_ros_ws/install/mujoco_ros2_control/lib:${LD_LIBRARY_PATH} /usr/bin/cmake --install /home/yue/mujoco_ros_ws/build/mujoco_ros2_control_demos
