@@ -1,63 +1,162 @@
+import math
+import time
+import numpy as np
+import serial
+import pinocchio as pin
 import mujoco
 import mujoco.viewer
-import pinocchio as pin
-import numpy as np
 
-# 加载模型
-model = mujoco.MjModel.from_xml_path('/home/yue/mujoco_ros_ws/src/toe_arm.xml')
-data = mujoco.MjData(model)
+from DM_CAN import *
 
-pin_model = pin.buildModelFromUrdf('/home/yue/mujoco_ros_ws/src/toe_arm.urdf')
+# =========================================================
+# 1️⃣ 电机定义
+# =========================================================
+Motor1 = Motor(DM_Motor_Type.DM4340, 0x01, 0x11)
+Motor2 = Motor(DM_Motor_Type.DM4340, 0x02, 0x12)
+Motor3 = Motor(DM_Motor_Type.DM4340, 0x03, 0x13)
+Motor4 = Motor(DM_Motor_Type.DM4310, 0x04, 0x14)
+Motor5 = Motor(DM_Motor_Type.DM4310, 0x05, 0x15)
+Motor6 = Motor(DM_Motor_Type.DM4310, 0x06, 0x16)
+
+motors = [Motor1, Motor2, Motor3, Motor4, Motor5, Motor6]
+
+# =========================================================
+# 2️⃣ 串口
+# =========================================================
+serial_device = serial.Serial(
+    port='/dev/ttyACM0',
+    baudrate=921600,
+    timeout=0.5
+)
+
+mc = MotorControl(serial_device)
+
+for m in motors:
+    mc.addMotor(m)
+
+# =========================================================
+# 3️⃣ MIT模式 + 使能
+# =========================================================
+for m in motors:
+    mc.switchControlMode(m, Control_Type.MIT)
+
+time.sleep(1)
+
+for m in motors:
+    mc.enable(m)
+
+print("All motors enabled")
+time.sleep(1)
+
+# =========================================================
+# 4️⃣ Pinocchio
+# =========================================================
+pin_model = pin.buildModelFromUrdf(
+    '/home/yue/mujoco_ros_ws/src/toe_arm.urdf'
+)
 pin_data = pin_model.createData()
 
-# ====== 建立名称映射（确保关节顺序一致） ======
-mj_joint_names = [model.joint(i).name for i in range(model.njnt)]
-pin_joint_names = list(pin_model.names)   # 包含 universe 等基座
+# =========================================================
+# 5️⃣ MuJoCo
+# =========================================================
+mj_model = mujoco.MjModel.from_xml_path(
+    "/home/yue/mujoco_ros_ws/src/toe_arm.xml"
+)
+mj_data = mujoco.MjData(mj_model)
 
-# 只取实际关节名称
-arm_joint_names = [n for n in pin_joint_names if n in mj_joint_names]
+viewer = mujoco.viewer.launch_passive(mj_model, mj_data)
 
-# 按 Pinocchio 的顺序获取 MuJoCo qpos 索引
-qpos_idxs = [model.jnt_qposadr[model.joint(name).id] for name in arm_joint_names]
+# =========================================================
+# 6️⃣ 关节标定（必须保留）
+# =========================================================
+q_offset = np.array([
+    -2.777,
+    -2.296,
+    0.3,
+    -0.34,
+    2.3,
+    3.0
+], dtype=np.float64)
 
-# 按 Pinocchio 的顺序获取 MuJoCo ctrl 索引（因为 actuator 顺序与关节一致）
-ctrl_idxs = [model.joint(name).id for name in arm_joint_names]
+# =========================================================
+# 7️⃣ 电机方向修正
+# =========================================================
 
-# ====== 校准系数 ======
-def calibrate_gravity_scale():
-    """ 计算 Pinocchio 重力力矩到 MuJoCo 真实重力力矩的缩放系数 """
-    # 使用当前姿态（通常静止）
-    q = data.qpos[qpos_idxs].copy()
-    tau_pin = pin.computeGeneralizedGravity(pin_model, pin_data, q)
-    
-    # MuJoCo 真实重力矩（速度为零时即为纯重力矩）
-    tau_mj = data.qfrc_bias[ctrl_idxs].copy()  # 只取机械臂部分
-    
-    # 避免除零，对每个关节计算比例
-    scale = np.ones_like(tau_pin)
-    nonzero = np.abs(tau_pin) > 1e-6
-    scale[nonzero] = tau_mj[nonzero] / tau_pin[nonzero]
-    
-    print("Calibration scale:", scale)
-    return scale
+S = np.array([-1, 1.1, -1.2, -1.1, -1.1, 1])
 
-# 运行一步让仿真初始化
-mujoco.mj_step(model, data)
-scale = calibrate_gravity_scale()
+# =========================================================
+# 8️⃣ 主循环参数
+# =========================================================
+DT = 0.002
 
-# ====== 可视化循环 ======
-with mujoco.viewer.launch_passive(model, data) as viewer:
-    while viewer.is_running():
-        mujoco.mj_step(model, data)
-        
-        # 当前关节角
-        q = data.qpos[qpos_idxs].copy()
-        
-        # 修正后的重力补偿力矩
-        tau_g_pin = pin.computeGeneralizedGravity(pin_model, pin_data, q)
-        tau_compensated = tau_g_pin * scale
-        
-        # 施加到 MuJoCo（此处只有重力补偿）
-        data.ctrl[ctrl_idxs] = tau_compensated
-        
-        viewer.sync()
+print("Start control + MuJoCo visualization...")
+
+# =========================================================
+# 9️⃣ 主循环
+# =========================================================
+while viewer.is_running():
+
+    # =========================
+    # 1. 读取电机角度
+    # =========================
+    q_raw = np.array([
+        -Motor1.getPosition(),
+        Motor2.getPosition(),
+        -Motor3.getPosition(),
+        -Motor4.getPosition(),
+        -Motor5.getPosition(),
+        Motor6.getPosition()
+    ], dtype=np.float64)
+
+    q = q_raw + q_offset
+
+    # =========================
+    # 2. Pinocchio 正向运动学 + 动力学
+    # =========================
+    pin.forwardKinematics(pin_model, pin_data, q)
+
+    tau_g = pin.rnea(
+        pin_model,
+        pin_data,
+        q,
+        np.zeros(6),
+        np.zeros(6)
+    )
+
+    tau_g = np.clip(tau_g, -8.0, 8.0)
+
+    # =========================
+    # 3. MIT 控制（实机）
+    # =========================
+    for i, m in enumerate(motors):
+        mc.controlMIT(
+            m,
+            kp=0.0,
+            kd=1.5,
+            q=0.0,
+            dq=0.0,
+            tau=S[i]* tau_g[i]
+        )
+
+    # =========================
+    # 4. MuJoCo 同步（核心）
+    # =========================
+    mj_data.qpos[:6] = q
+    mj_data.qvel[:] = 0.0
+
+    mujoco.mj_forward(mj_model, mj_data)
+    viewer.sync()
+
+    # =========================
+    # 5. debug 输出
+    # =========================
+    print("--------------------------------------------------")
+    for i in range(6):
+        print(f"M{i+1}: q={q[i]:.3f} tau={tau_g[i]:.3f}")
+
+    time.sleep(DT)
+
+# =========================================================
+# 10️⃣ 关闭串口
+# =========================================================
+serial_device.close()

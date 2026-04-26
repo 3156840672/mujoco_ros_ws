@@ -93,8 +93,8 @@ while True:
     # MotorControl1.control_Pos_Vel(Motor1, -2.777, 0.1)
     # MotorControl1.control_Pos_Vel(Motor2, 2.296, 0.1)
     # MotorControl1.control_Pos_Vel(Motor3, -0.06, 0.1)
-    # MotorControl1.control_Pos_Vel(Motor4, 1.225, 0.1)
-    # MotorControl1.control_Pos_Vel(Motor5, 0.96, 0.1)
+    # MotorControl1.control_Pos_Vel(Motor4, -0.34, 0.1)
+    # MotorControl1.control_Pos_Vel(Motor5, 2.0, 0.1)
     # MotorControl1.control_Pos_Vel(Motor6, 3.0, 0.1)
 
     # 👉 打印

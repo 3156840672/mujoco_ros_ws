@@ -50,11 +50,11 @@
         </body>
     </worldbody>
     <actuator>
-        <position joint="joint1" kp="200" kv="30"/>
-        <position joint="joint2" kp="200" kv="30"/>
-        <position joint="joint3" kp="200" kv="30"/>
-        <position joint="joint4" kp="200" kv="30"/>
-        <position joint="joint5" kp="200" kv="30"/>
-        <position joint="joint6" kp="200" kv="30"/>
+        <motor joint="joint1" ctrlrange="-100 100"/>
+        <motor joint="joint2" ctrlrange="-100 100"/>
+        <motor joint="joint3" ctrlrange="-100 100"/>
+        <motor joint="joint4" ctrlrange="-100 100"/>
+        <motor joint="joint5" ctrlrange="-100 100"/>
+        <motor joint="joint6" ctrlrange="-100 100"/>
     </actuator>
 </mujoco>
