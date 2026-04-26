@@ -146,13 +146,13 @@ while True:
         float(q[0]) - 2.777,
         -float(q[1]) + 2.296,
         float(q[2]) - 0.0,
-        -float(q[3]) + 1.225,
-        0.96 - float(q[4]),
+        -float(q[3]) -0.34,
+        2.0 - float(q[4]),
         float(q[5]) + 3.0
     ]
 
     for i in range(6):
-        MotorControl1.controlMIT(motors[i],40, 0.2, cmd[i], 0, 0)
+        MotorControl1.controlMIT(motors[i],25, 0.1, cmd[i], 0, 0)
 
     # for i in range(6):
     #     MotorControl1.control_Pos_Vel(motors[i], cmd[i], 0.1)
@@ -161,8 +161,8 @@ while True:
         motors[0].getPosition()+ 2.777,
         motors[1].getPosition()- 2.296,
         motors[2].getPosition()+ 0.0,
-        motors[3].getPosition()- 1.225,
-        motors[4].getPosition()- 0.96,
+        motors[3].getPosition()+ 0.34,
+        motors[4].getPosition()- 2.0,
         motors[5].getPosition()- 3.0
     ]
     
